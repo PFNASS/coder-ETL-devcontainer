@@ -1,0 +1,43 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "ms-python.python",
+                "ms-python.debugpy",
+                "KevinRose.vsc-python-indent",
+                "donjayamanne.python-extension-pack",
+                "redhat.vscode-yaml",
+                "esbenp.prettier-vscode",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspaces/ETL,type=bind"
+    ],
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2.12.2": {
+            "version": "latest",
+	        "moby": false
+        },
+        "ghcr.io/devcontainers/features/git:1": {
+                "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers-extra/features/spark-sdkman:2": {
+            "version": "3.5.3",
+            "jdkVersion": "latest"
+        },
+        "ghcr.io/devcontainers-extra/features/hadoop-sdkman:2": {
+            "version": "latest"
+        }
+    },
+    "remoteUser": "coder",
+    "onCreateCommand": "bash .devcontainer/scripts/on-create.sh"
+}

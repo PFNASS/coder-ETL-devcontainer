@@ -1,0 +1,4 @@
+pyyaml
+pandas
+numpy
+delta-spark==3.3.2
